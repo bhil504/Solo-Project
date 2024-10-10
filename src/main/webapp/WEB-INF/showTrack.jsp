@@ -8,23 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Show Track</title>
-<style>
-	*{
-	justify-content: space-evenly;
-	margin: 5px;
-	padding: 5px;
-	
-}
-
-
-table{
-	
-	justify-content: space-evenly;
-	border-style: solid;
-	padding: 10px;
-}
-
-</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <h1><c:out value="${track.title}"/></h1>
@@ -53,5 +37,6 @@ table{
 	</div>
 	
 	<a href="/tracks/${track.id}/edit">Edit</a>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -10,43 +10,30 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Update Page</title>
-    <style>
-        * {
-            justify-content: space-evenly;
-            margin: 5px;
-            padding: 5px;
-        }
-        form {
-            justify-content: space-evenly;
-            border-style: solid;
-            padding: 10px;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <h1>Edit Track: <c:out value="${tracks.title}"></c:out></h1>
 
 <!-- Main form for updating track -->
-<form action="/tracks/${tracks.id}" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
-    <input type="hidden" name="_method" value="PUT">
-    <div>
-        <label for="title">Title:</label>
-        <input type="text" name="title" value="${track.title}" />
+<form action="/upload-track" method="post" enctype="multipart/form-data" class="mt-4">
+    <div class="mb-3">
+        <label for="title" class="form-label">Track Title</label>
+        <input type="text" class="form-control" id="title" name="title" required>
     </div>
-    <div>
-        <label for="genre">Genre:</label>
-        <input type="text" name="genre" value="${track.genre}" />
+    <div class="mb-3">
+        <label for="genre" class="form-label">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre" required>
     </div>
-    <div>
-        <label for="lyrics">Lyrics:</label>
-        <textarea name="lyrics">${track.lyrics}</textarea>
+    <div class="mb-3">
+        <label for="lyrics" class="form-label">Lyrics</label>
+        <textarea class="form-control" id="lyrics" name="lyrics" rows="3"></textarea>
     </div>
-    <div>
-        <label for="file">Track File:</label>
-        <input type="file" name="file" />
+    <div class="mb-3">
+        <label for="file" class="form-label">Upload Track</label>
+        <input class="form-control" type="file" id="file" name="file">
     </div>
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-primary">Upload</button>
 </form>
 
 <c:if test="${tracks.user.id == userId}">
@@ -57,5 +44,6 @@
 </c:if>
 
 <a href="/welcome">Cancel</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

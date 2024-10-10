@@ -8,22 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Dashboard</title>
-<style>
-	*{
-	justify-content: space-evenly;
-	margin: 5px;
-	padding: 5px;
-	
-}
-
-
-th{
-	
-	justify-content: space-evenly;
-	border-style: solid;
-	padding: 10px;
-}
-</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div>
@@ -53,5 +38,6 @@ th{
 	</table>
 	
 	<a href="/tracks/new">Create A New Track</a>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
